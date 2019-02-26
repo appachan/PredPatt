@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='predpatt',
-      version='1.0',
+      version='1.0.1',
       description='Multilingual predicate-argument extraction from universal dependency syntax.',
       packages=['predpatt', 'predpatt.util'],
       install_requires=['concrete',
