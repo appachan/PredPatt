@@ -11,5 +11,6 @@ setup(name='predpatt',
                         'tabulate',
                         'PyStanfordDependencies',
                         'jpype1',
-                        'future']
+                        'future',
+                        'stanfordnlp']
 )
