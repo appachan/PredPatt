@@ -12,9 +12,12 @@ tabulate = "*"
 pystanforddependencies = "*"
 "jpype1" = "*"
 future = "*"
+stanfordnlp = "*"
 
 [dev-packages]
 pylint = "*"
+jupyter = "*"
+tornado = "~=5.1.1" # avoid jupyter/notebook issue #4399
 
 [requires]
-python_version = "3.6"
+python_version = "3.7.2"

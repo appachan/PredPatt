@@ -344,7 +344,6 @@ def convert_parse(parse, ud):
 
 _PARSER = None
 
-
 class PredPatt(object):
 
     def __init__(self, parse, opts=None):
@@ -358,6 +357,19 @@ class PredPatt(object):
         self.events = None
         self.event_dict = None  # map from token position to `Predicate`
         self.extract()
+
+    @classmethod
+    def set_ud_parser(cls, parser):
+        """
+        set a Parser instance in `_PARSER`.
+        `parser` expected as a instance of (predpatt.util.UDParser|predpatt.util.Stanfordnlp).
+        """
+        from predpatt.util.UDParser import Parser as UDParser
+        from predpatt.util.Stanfordnlp import Parser as Stanfordnlp
+        parser_class = (UDParser, Stanfordnlp)
+        assert isinstance(parser, parser_class), "invalid `parser` class: {}".format(type(parser))
+        global _PARSER
+        _PARSER = parser
 
     @classmethod
     def from_constituency(cls, parse_string, cacheable=True, opts=None):
