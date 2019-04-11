@@ -22,6 +22,9 @@ class Parser():
         x = self.fresh(*args, **kwargs)
         return x
     
+    def release_ud_parser(self):
+        self.ud_parser = None
+    
     def parse(self, sentence):
         sentence = self.ud_parser(sentence).sentences[0]
         deps = sentence.words
